@@ -3,5 +3,5 @@
 <h3><%= @guest.occupation %></h3>
 
 <% @guest.appearances.each do |a| %>
-<p><%= link_to a.episode.date, episode_path(a.episode.id) %> - <%="Rating: #{a.rating}/5" %> <%= link_to "(edit appearance)", edit_appearance_path(a) %></p>
+<p><%= link_to a.episode.date, episode_path(a.episode.id) %> - Booked by: <%= User.find(a.user_id).username %> - <%="Rating: #{a.rating}/5" %> <%= link_to "(edit appearance)", edit_appearance_path(a) %></p>
 <% end %>
