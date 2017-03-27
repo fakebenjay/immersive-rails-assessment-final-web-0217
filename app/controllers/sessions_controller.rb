@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    redirect_to guests_path if logged_in?
   end
 
   def create
@@ -12,5 +13,16 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
+
+  def destroy
+    session.clear
+    redirect_to login_path
+  end
+
+  private
+
+    def logged_in?
+      !!session[:user_id]
+    end
 
 end

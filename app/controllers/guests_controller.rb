@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  before_action :login
 
   def index
     @guests = Guest.all

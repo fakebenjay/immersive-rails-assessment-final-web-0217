@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+  before_action :login
 
   def index
     @episodes = Episode.all
