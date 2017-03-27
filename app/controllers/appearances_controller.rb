@@ -1,4 +1,4 @@
-class AppearancesController < SessionsController
+class AppearancesController < ApplicationController
   before_action :login
 
   def new
